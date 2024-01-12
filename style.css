@@ -1,0 +1,1143 @@
+@import url('https://fonts.googleapis.com/css2?family=BenchNine:wght@700&family=Noto+Sans:wght@300&family=Playfair+Display:wght@500&display=swap');
+
+
+/*===== global =====*/
+
+*::before, *::after{
+    content: '';
+    position: absolute;
+  	display: block;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    fill: inherit;
+}
+
+ul, ol, menu{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+button{
+    cursor: pointer;
+    background: none;
+    padding: unset;
+    font: inherit;
+    border: none;
+    color: inherit;
+    fill: inherit;
+}
+
+svg {
+	vertical-align: top
+}
+
+/*===== ====== =====*/
+
+/*===== component =====*/
+
+.svgIcon{
+    display: block;
+	background-color: currentColor;
+	-webkit-mask: no-repeat var(--svgImage) center / contain;
+    mask: no-repeat var(--svgImage) center / contain;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+}
+
+h1.mainTitle{
+    margin: 1em;
+	font-size: 45px;
+    font-family: 'Playfair Display', serif;
+	letter-spacing: 0.08em;
+	word-spacing: 0.3em;
+    text-align: center;
+}
+
+h1.bigTitle{
+    margin: 0;
+    font-family: 'BenchNine';
+    letter-spacing: -0.04em;
+    word-spacing: 0.3em;
+    color: var(--front2);
+}
+
+/*===== ========= =====*/
+
+/*===== common animations =====*/
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    } to{
+        opacity: 1;
+    }
+}
+
+/*===== ================= =====*/
+
+/*===== rootProject =====*/
+
+/* language */
+
+body[lang="fr"] *[lang="en"], body[lang="en"] *[lang="fr"]{
+	display: none !important;
+}
+
+/* theme */
+
+.🌙{
+	--front1: #c7d0d8;
+    --front2: #747474;
+    --back1: #171819;
+    --back2: #1F2122;
+}
+
+.☀️{
+    --front1: #352524;
+    --front2: #B36A5E;
+    --back1: #ece6e6;
+    --back2: #d5bcb8;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    --heightHeader: 11vh;
+    margin: 0;
+    color: var(--front1);
+    fill: currentColor;
+    font-family: 'Noto Sans', sans-serif;
+    background: var(--back1);
+}
+
+/*===== =========== =====*/
+
+/*===== header =====*/
+
+header{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: var(--heightHeader);
+    box-sizing: border-box;
+    padding: 0 2%;
+    z-index: 10;
+    backdrop-filter: blur(30px);
+}
+
+header::before{
+    inset: 0;
+    background-color: var(--back1);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+header .siteLogo, header>#settings>#settingsButton{
+    display: grid;
+    place-content: center;
+    height: 100%;
+    padding: 0 1.5em;
+}
+
+.siteLogo>.svgIcon{
+    --svgImage: url("img/aoLogo.svg");
+    height: 2.5em;
+}
+
+header .smallButtonMenu{
+    display: none;
+}
+
+header>#sectionLinks{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+}
+
+header>#sectionLinks>a{
+    display: grid;
+    place-content: center;
+    height: 100%;
+    white-space: nowrap;
+    padding: 0 1.5em;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+header>#sectionLinks>a>span{
+    position: relative;
+}
+
+header>#sectionLinks>a>span::after{
+    inset: 0;
+    top: unset;
+    bottom: -0.3em;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+header>#sectionLinks>a:hover>span::after{
+    transform: scaleX(80%);
+}
+
+header>#settings{
+    position: relative;
+    height: 100%;
+}
+
+header>#settings>#settingsButton{
+    position: relative;
+}
+
+header>#settings>#settingsButton:focus{
+    pointer-events: none;
+}
+
+header>#settings>#settingsButton>.svgIcon{
+    --svgImage: url("img/icon/gear.svg");
+    height: 1.7em;
+    transform: rotate(0);
+    transition: transform 0.5s;
+}
+
+header>#settings:hover>#settingsButton>.svgIcon,
+header>#settings>#settingsButton:focus>.svgIcon{
+    transform: rotate(90deg);
+}
+
+header>#settings>.placeholder{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+header>#settings>.placeholder>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-100%);
+    backdrop-filter: blur(30px);
+    transition: transform 0.3s 0.4s;
+    pointer-events: initial;
+}
+
+header>#settings>.placeholder>div::before{
+    inset: 0;
+    background-color: var(--back1);
+    border-radius: 0 0 0.3em 0.3em;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+header>#settings:hover>.placeholder>div,
+header>#settings>#settingsButton:focus + .placeholder>div,
+header>#settings>.placeholder>div:focus-within{
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+header #languageButton{
+    padding: 1em;
+}
+
+header #languageButton>img{
+    width: 1.7em;
+    overflow: hidden;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+}
+
+body[lang="fr"] #languageButton>.fr, body[lang="en"] #languageButton>.en{
+	display: none !important;
+}
+
+header #themeButton{
+    padding: 1em;
+    isolation: isolate;
+}
+
+header #themeButton>div{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 1.7em;
+    padding: 0.3em;
+    gap: 0.5em;
+    background-color: var(--back1);
+    color: var(--front1);
+    border-radius: 10em;
+    border: solid 2px currentColor;
+    position: relative;
+    filter: invert(0);
+    transition: filter 0.3s;
+}
+
+body.☀️ header #themeButton>div{
+    filter: grayscale(1) invert(0.9);
+}
+
+header #themeButton>div::before{
+    background-color: currentColor;
+    border-radius: 10em;
+    inset: -2px;
+    bottom: initial;
+    aspect-ratio: 1/1;
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+body.🌙 header #themeButton>div::before{
+    transform: translateY(calc(100% - 0.3em));
+}
+
+header #themeButton>div>.svgIcon{
+    width: 100%;
+    mix-blend-mode: difference;
+}
+
+header #themeButton>div>#sunIcon{
+    --svgImage: url("img/icon/sun.svg");
+}
+
+header #themeButton>div>#moonIcon{
+    --svgImage: url("img/icon/moon.svg");
+}
+
+/*===== ====== =====*/
+
+/*===== main =====*/
+
+main{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding-top: var(--heightHeader);
+}
+
+section{
+    box-sizing: border-box;
+    min-height: 100vh;
+    margin-top: calc(0px - var(--heightHeader));
+    padding-top: var(--heightHeader);
+}
+
+section.projectPage:not(:target){
+    display: none;
+}
+
+section.projectPage:target ~ section{
+    display: none !important;
+}
+
+/*===== projectPage =====*/
+
+section.projectPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    isolation: isolate;
+    position: relative;
+    padding-bottom: 7em;
+}
+
+section.projectPage::before{
+    position: fixed;
+    inset: -10px;
+    z-index: -1;
+    background: center / cover var(--svgImage);
+    filter: blur(10px);
+    opacity: 0.7;
+}
+
+section.projectPage::after{
+    inset: 0;
+    top: unset;
+    height: 7em;
+    background-image: linear-gradient(to bottom, transparent, var(--back1));
+    z-index: -1;
+}
+
+
+section.projectPage>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 60%;
+    min-width: min(50em, 100%);
+    box-sizing: border-box;
+    padding: 3em;
+    margin-top: 4em;
+    background-color: var(--back1);
+    border-radius: 0.3em;
+    position: relative;
+}
+
+section.projectPage>div>.backButton{
+    align-self: start;
+    box-sizing: border-box;
+    width: 2em;
+    height: 2em;
+    padding: 0.3em;
+    border-radius: 10em;
+    background-color: var(--front2);
+    color: var(--back2)
+}
+
+section.projectPage>div>.backButton:hover{
+    transform: scale(1.1);
+}
+
+section.projectPage>div>.backButton>.svgIcon{
+    transform: scaleX(1.5);
+}
+
+section.projectPage>div>h1{
+    margin: 0;
+}
+
+section.projectPage>div>img{
+    width: 100%;
+    border-radius: 0.3em;
+}
+
+section.projectPage>div>iframe{
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0.3em;
+    overflow: hidden;
+}
+
+section.projectPage>div>.projectSrc{
+	padding: 0.5em 1em;
+	border-radius: 10em;
+	display: flex;
+	flex-direction: row;
+	gap: 2em;
+	position: relative;
+}
+
+section.projectPage>div>.projectSrc::before{
+	inset: 0;
+	border: solid 4px var(--front2);
+	border-left-width: 3.5em;
+	border-radius: inherit;
+	opacity: 0.3;
+	transition: opacity 0.3s;
+}
+
+section.projectPage>div>.projectSrc:hover::before{
+	opacity: 0.5;
+}
+
+section.projectPage>div>.projectSrc::after{
+	top: 0;
+	bottom: 0;
+	right: 1em;
+	width: 1px;
+	background-color: var(--front2);
+	transform: scaleY(0.5) translateX(2px);
+	animation: fadeIn 1s steps(2, jump-none) infinite;
+}
+
+section.projectPage>div>.projectSrc>.svgIcon{
+	width: 1.5em;
+	height: 1.5em;
+	color: var(--back1)
+}
+
+/*===== =========== =====*/
+
+/*===== home =====*/
+
+#🏠home🏠{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+#🏠home🏠>.bigTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 10vw;
+}
+
+@keyframes comeFromTop {
+    0%{
+        transform: translateY(-125%);
+    }
+    20%, 80%{
+        animation-timing-function: ease-in-out;
+        transform: translateY(-50%);
+    }
+    100%{
+        transform: translateY(25%);
+    }
+}
+
+#🏠home🏠>.bigTitle>span{
+    --animationTime: 2s;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    height: 2ex;
+    overflow: hidden;
+}
+
+#🏠home🏠>.bigTitle>span>span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    right: 0;
+    animation: comeFromTop var(--animationTime) linear;
+}
+
+#🏠home🏠>.bigTitle>span>span:nth-child(2){
+    animation-delay: calc(var(--animationTime) - calc(0.2 * var(--animationTime)));
+}
+
+#🏠home🏠>.bigTitle>span>span:nth-child(3){
+    animation-delay: calc(2 * var(--animationTime) - calc(0.4 * var(--animationTime)));
+}
+
+#🏠home🏠>.bigTitle>span>span:nth-child(4){
+    animation-delay: calc(3 * var(--animationTime) - calc(0.6 * var(--animationTime)));
+}
+
+#🏠home🏠>.bigTitle>span>span:nth-child(5){
+    animation-delay: calc(4 * var(--animationTime) - calc(0.8 * var(--animationTime)));
+}
+
+#🏠home🏠>.bigTitle>span>span:nth-child(6){
+    animation-delay: calc(5 * var(--animationTime) - calc(1 * var(--animationTime)));
+}
+
+#🏠home🏠>.bigTitle>span>b{
+    opacity: 0;
+    animation: fadeIn var(--animationTime) calc(calc(6 - 6 * 0.2) * var(--animationTime)) forwards;
+}
+
+#🏠home🏠>#secondPart{
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2em;
+}
+
+#🏠home🏠 .description{
+    flex-grow: 7;
+    max-width: 40em;
+    flex-basis: 0;
+    font-size: 20px;
+}
+
+#🏠home🏠 .description>.mainTitle{
+    margin: 0;
+    font-size: 60px;
+}
+
+#🏠home🏠 #bigLogoAO{
+    flex-grow: 3;
+    max-width: 20em;
+    min-width: 12em;
+    background-color: var(--back2);
+    border-radius: 100em;
+    box-sizing: border-box;
+    padding: 2em;
+}
+
+#🏠home🏠 #bigLogoAO>.svgIcon{
+    color: var(--back1);
+    --svgImage: url("img/aoLogo.svg");
+}
+
+/*===== ==== =====*/
+
+/*===== projects =====*/
+
+#💡projects💡{
+    height: 100vh;
+}
+
+/* carrousel */
+
+.carrousel{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    clip-path: polygon(0 2em, 100% 0, 100% 100%, 0 calc(100% - 2em));
+    position: relative;
+    isolation: isolate;
+}
+
+.carrousel::before{
+    inset: 0;
+    background-image: url(img/texture.jpg);
+    background-size: 1em;
+    z-index: -1;
+}
+
+.☀️ .carrousel::before{
+    filter: invert(1);
+}
+
+.carrousel>.description{
+    font-family: 'Playfair Display', serif;
+    width: 100%;
+    height: 1em;
+    position: relative;
+}
+
+.carrousel>.description>span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.carrousel>.description>span:not(.on){
+    transform: scale(0);
+    opacity: 0;
+}
+
+.carrousel>.images{
+    position: relative;
+    flex-grow: 1;
+}
+
+.carrousel>.images>a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 90vw;
+    height: 100%;
+    aspect-ratio: 16/9;
+    transition: transform 2s, opacity 1s;
+    isolation: isolate;
+}
+
+.carrousel>.images>a.hide{
+    display: none;
+}
+
+.carrousel>.images>a:not(.on){
+    pointer-events: none;
+    transform: translateX(150%);
+    opacity: 0;
+}
+
+.carrousel>.images>a.on{
+    transform: translateX(-50%);
+}
+
+.carrousel>.images>:is(a.on+a, a.firstToLast){
+    transform: translateX(-250%);
+}
+
+.carrousel>.images>a::before{
+    inset: 0;
+    filter: blur(4em);
+    background: var(--svgImage) no-repeat center;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.carrousel>.images>a>img{
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.carrousel>.images>a:hover>img{
+    transform: scale(1.02);
+}
+
+.carrousel>:is(.left, .right){
+    --svgImage: url("img/icon/arrow.svg");
+    position: absolute;
+    top: 50%;
+    width: 7em;
+    transform: translateY(-50%);
+}
+
+.carrousel>:is(.left, .right):not(:hover){
+    opacity: 0.7;
+}
+
+.carrousel>.left{
+    left: 7%;
+}
+
+.carrousel>.right{
+    right: 7%;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.carrousel>.languageIcons{
+    position: relative;
+    top: -0.7em;
+    height: 2.2em;
+    padding: 0.8em;
+    border-radius: 10em;
+    background-color: var(--back2);
+}
+
+.carrousel>.languageIcons>img{
+    width: 0;
+    height: 100%;
+    object-fit: contain;
+    transition: width 0.3s;
+}
+
+.carrousel>.languageIcons>img.on{
+    width: 2.5em;
+}
+
+.carrousel>.controls{
+    display: flex;
+    flex-direction: row;
+}
+
+.carrousel>.controls>button{
+    display: block;
+    width: 3em;
+    height: 3em;
+    position: relative;
+}
+
+.carrousel>.controls>button::after{
+    inset: 1em;
+    border-radius: 10em;
+    background-color: currentColor;
+}
+
+.carrousel>.controls>button:hover::after{
+    opacity: 0.8;
+}
+
+.carrousel>.controls>button:where(:not(.on))::after{
+    opacity: 0.5;
+}
+
+/***/
+
+/*===== ======== =====*/
+
+/*===== commun =====*/
+
+#🙋aboutMe🙋, #💻programs💻, #📜qualification📜{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:is(#🙋aboutMe🙋, #📜qualification📜) .textStyle,
+:where(#💻programs💻) :is(.codingTxt, .programsIcons){
+    box-sizing: border-box;
+    width: 40em;
+    max-width: 100%;
+    padding: 2em;
+}
+
+:is(#🙋aboutMe🙋, #📜qualification📜) .textStyle>ul{
+    padding-left: 2em;
+}
+
+/*===== ====== =====*/
+
+/*===== programs =====*/
+
+/* coding text */
+
+.codingTxt{
+    background-color: #1E1E1E;
+    font-family: monospace;
+    font-weight: 500;
+    color: lightgray;
+    padding-left: 4em;
+    padding-bottom: 4em;
+    font-size: 16px;
+    border-radius: 0.5em;
+    counter-reset: codeCounter;
+    position: relative;
+}
+
+.codingTxt>li{
+    line-height: 1.2em;
+    counter-increment: codeCounter;
+    position: relative;
+}
+
+.codingTxt>li::before{
+    content: counter(codeCounter);
+    left: -2em;
+    color: gray;
+}
+
+.codingTxt>li:not(:is(:first-of-type, :last-of-type)){
+    padding-left: 2em;
+}
+
+.codingTxt>li:not(:is(:first-of-type, :last-of-type))::after{
+    inset: 0;
+    right: initial;
+    width: 1px;
+    background-color: gray;
+}
+
+.codingTxt em{
+    color: #CE8349;
+    font-style: normal;
+}
+
+.codingTxt i{
+    color: #67CDFE;
+    font-style: normal;
+}
+
+.codingTxt b{
+    color: #F1D700;
+    font-weight: inherit;
+}
+
+.codingTxt strong{
+    color: #569CD6;
+    font-weight: inherit;
+}
+
+.codingTxt .codeLuncher{
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    padding: 1em;
+    width: 2em;
+    box-sizing: content-box;
+}
+
+.codingTxt .codeLuncher .svgIcon{
+    color: gray;
+    --svgImage: url("img/icon/reaload.svg");
+    opacity: 0.7;
+}
+
+.codingTxt .codeLuncher:hover .svgIcon{
+    opacity: 1;
+    transform: scale(1.2) rotate(-360deg);
+}
+
+.codingTxt .codeLuncher:not(:hover) .svgIcon{
+    transition: transform 0.5s;
+}
+
+/***/
+
+#💻programs💻 .programsIcons{
+    width: 50em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: space-around;
+}
+
+#💻programs💻 .programsIcons>li{
+    position: relative;
+    width: 3.7em;
+    height: 3.7em;
+    border-radius: 0.3em;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+#💻programs💻 .programsIcons>li::before{
+    inset: 0;
+    background-color: var(--front1);
+    opacity: 0.1;
+}
+
+#💻programs💻 .programsIcons>li>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(0.6);
+}
+
+@keyframes upToPercent{
+	from{
+		transform: scaleY(0%);
+	}
+	to{
+		transform: scaleY(var(--percent));
+	}
+}
+
+#💻programs💻 .programsIcons>li>.jauge{
+    position: absolute;
+    inset: 0;
+    background-color: var(--front1);
+    opacity: 0.1;
+    transform-origin: bottom center;
+    animation: upToPercent 3s forwards;
+    z-index: -1;
+}
+
+/*===== ======== =====*/
+
+/*===== aboutMe =====*/
+
+#🙋aboutMe🙋>.contentSection{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 2em;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+#🙋aboutMe🙋>.contentSection>.picture{
+    flex-grow: 3;
+    flex-basis: 0;
+    max-width: 20em;
+    min-width: 12em;
+    border-radius: 100em;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#🙋aboutMe🙋>.contentSection>.picture>img{
+    position: absolute;
+    top: -20%;
+	  left: -2%;
+		width: 110%;
+}
+
+#🙋aboutMe🙋>.contentSection>.textStyle{
+    flex-grow: 7;
+    flex-basis: 0;
+    max-width: 40em;
+}
+
+/*===== ======= =====*/
+
+/*===== contact =====*/
+
+#💬contact💬{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#💬contact💬>h1{
+    margin: 0.5em;
+}
+
+#💬contact💬>#contactContent{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2em;
+    gap: 4em;
+    width: 100%;
+}
+
+#💬contact💬>#contactContent>ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 50em;
+}
+
+#💬contact💬>#contactContent>ul>li{
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 1em;
+}
+
+#💬contact💬>#contactContent>ul>li>a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em
+}
+
+#💬contact💬>#contactContent>ul>li>a :is(.svgIcon, img){
+    width: 4em;
+    height: 4em;
+    object-fit: contain;
+}
+
+/* following circle */
+
+#💬contact💬 ul li{
+    position: relative;
+    isolation: isolate;
+}
+
+#💬contact💬 ul li::before{
+    inset: 0;
+    clip-path: circle(20%);
+    background-color: var(--back2);
+    transition: transform 0.5s, opacity 0.3s;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#💬contact💬 ul:not(:hover) li::before{
+    opacity: 0;
+    transform: translateX(0) scale(0);
+}
+
+#💬contact💬 ul:hover li::before{
+    opacity: 0;
+    transform: translateX(60%) scale(1);
+}
+
+#💬contact💬 ul:hover li:hover::before{
+    transition-delay: 0.1s;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+#💬contact💬 ul:hover li:hover ~ li::before{
+    opacity: 0;
+    transform: translateX(-60%) scale(1);
+}
+
+/***/
+
+/*===== ======= =====*/
+
+/*===== download =====*/
+
+#⬇️download⬇️{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+#⬇️download⬇️>.bigTitle{
+    font-size: 70px;
+    margin: 0 2em;
+    text-align: center;
+}
+
+#⬇️download⬇️>a{
+    width: 15em;
+    height: 15em;
+    padding: 3em;
+    padding-bottom: 5em;
+    box-sizing: border-box;
+    position: relative;
+    isolation: isolate;
+}
+
+#⬇️download⬇️>a::before{
+    inset: 0;
+    background-color: var(--front2);
+    opacity: 0.3;
+    border-radius: 100em;
+    transition: opacity 0.3s;
+}
+
+#⬇️download⬇️>a:hover::before{
+    opacity: 0.5;
+}
+
+#⬇️download⬇️>a::after{
+    left: 50%;
+    bottom: 2em;
+    width: 8.5em;
+    height: 1.5em;
+    border-radius: 10em;
+    background-color: var(--back1);
+    transform: translate(-50%);
+}
+
+#⬇️download⬇️>a>.svgIcon{
+    color: var(--back1);
+    --svgImage: url(img/icon/downArrow.svg);
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+#⬇️download⬇️>a:hover>.svgIcon{
+    transform: translateY(-1em);
+}
+
+#⬇️download⬇️>a:active>.svgIcon{
+    transform: translateY(1.5em);
+}
+
+/*===== ======== =====*/
+
+/*===== ==== =====*/
+
+/*===== footer =====*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    background-color: var(--back2);
+		box-shadow: 0px 4em var(--back2);
+    color: var(--front2);
+    font-size: 0.7em;
+    z-index: 2;
+    position: relative;
+}
+
+/*===== ====== =====*/

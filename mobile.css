@@ -1,0 +1,88 @@
+/*===== header =====*/
+
+header{
+    justify-content: space-between;
+}
+
+header>#smallButtonMenu{
+    width: 3em;
+    height: 3em;
+    position: relative;
+}
+
+header>#smallButtonMenu:focus-within{
+    pointer-events: none;
+}
+
+header>#smallButtonMenu::before{
+    left: 0.2em;
+    right: 0.2em;
+    top: calc(50% - 0.1em);
+    height: 0.2em;
+    border-radius: 10em;
+    background-color: currentColor;
+    box-shadow: 0 1em currentColor, 0 -1em currentColor;
+    transform: rotate(0);
+    transition: transform 0.3s;
+}
+
+header>#smallButtonMenu:focus-within::before{
+    transform: rotate(90deg);
+}
+
+header>#sectionLinks{
+    position: fixed;
+    inset: 0;
+    top: var(--heightHeader);
+    height: calc(100vh - var(--heightHeader));
+    flex-direction: column;
+    display: none;
+    background-color: var(--back1);
+}
+
+header>#sectionLinks::after{
+    content: "+";
+    top: 0;
+    right: 0.5em;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border: solid 2px var(--front2);
+    border-radius: 10em;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+header>#sectionLinks>a{
+    width: 100%;
+    position: relative;
+}
+
+header>#sectionLinks>a:not(:last-child)::after{
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    background-color: var(--front2);
+    transform: scale(0.4);
+}
+
+header>#smallButtonMenu:focus-within+#sectionLinks,
+header>#sectionLinks:active{
+    display: flex;
+}
+
+/*===== ====== =====*/
+
+#🏠home🏠>.bigTitle{
+    flex-direction: column;
+    gap: 0;
+    font-size: 20vw;
+}
+
+.carrousel > :is(.left, .right){
+    top: unset;
+    bottom: 15%;
+}

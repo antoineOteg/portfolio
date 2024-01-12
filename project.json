@@ -1,0 +1,93 @@
+[
+	{
+		"projectId": "myPortfolio",
+		"projectSrc": "https://portfolio.antoineoteg.repl.co",
+		"projectVideo": null,
+		"srcIllustration": "presMyPortfolio.png",
+		"frTitle": "Ce Site Web",
+		"enTitle": "This Website",
+		"frSubTitle": "Ce site web a été entierement conçu à la main",
+		"enSubTitle": "This website was designed entirely by hand",
+		"frDescription": "Le portfolio est un moyen efficace de se faire rapidement une idée de mes compétences. Je veille à le mettre régulièrement à jour, pour qu'il révèle au mieux mon niveau actuel. Ce portfolio a eu de multiples versions, design et contenus différents, car il suit également ma progression dans les technologies web !",
+		"enDescription": "The portfolio is an easy way to quickly get an idea of my skills. I take care to update it regularly, to show my current level. This portfolio had multiple versions, design and different content, because it also follows my progress in web technologies!",
+		"listPrograms": ["html5", "css3", "javaScript"]
+	},
+	{
+		"projectId": "cosyLeaf",
+		"projectSrc": null,
+		"projectVideo": "https://www.youtube.com/embed/qdzi5AwqZRc",
+		"srcIllustration": "presCosyLeaf.png",
+		"frTitle": "Cosy Leaf",
+		"enTitle": "Cosy Leaf",
+		"frSubTitle": "Un site de e-commerce en Laravel",
+		"enSubTitle": "An e-shop website in Laravel",
+		"frDescription": "Ce site de e-commerce a été effectué dans le cadre du BUT, en équipe de 5 étudiants. Nous avons mis en place un site de e-commerce, comprenant Back et Front, reprenant toutes les fonctionnalités attendues dans n'importe quel site de e-commerce. Ainsi, celui ci est composé d'un panier utilisateur (en session et BD), d'un moteur de recherches, filtres et tri, et d'affichage en pagination. Mais il est également composé de toutes les fonctionnalités de connexion, déconnexion, création de compte, mot de passe oublié... Pour créer ce site one-page, nous avons utilisé le framework Laravel pour le back, et nous sommes restés en JavaScript natif et CSS pour le front.",
+		"enDescription": "This e-shop website was made for the BUT, in a team of 5. We have set up an e-shop website, including Back and Front, incorporating all the functionality expected in any e-shop website. This one is composed of a user cart (session and DB), a search engine, filter and sort. But it is also composed of all the functionalities of login, logout, sign up, forgotten password... To create this one-page website, we used the Laravel framework for the back, and we stayed in native JavaScript and CSS for the front.",
+		"listPrograms": ["html5", "css3", "javaScript", "laravel", "php"]
+	},
+	{
+		"projectId": "echecMartien",
+		"projectSrc": null,
+		"projectVideo": "https://www.youtube.com/embed/4Zm8cGxFFPQ",
+		"srcIllustration": "presEchecsMartiens.png",
+		"frTitle": "Échecs Martiens",
+		"enTitle": "Martian Chess",
+		"frSubTitle": "Un jeu Kotlin multijoueur développé en javaFx",
+		"enSubTitle": "A Kotlin multiplayer game developed in javaFx",
+		"frDescription": "Ce jeu est un travail groupe, effectué à l'IUT. En groupe de 4, nous avons élaboré le design, et codé un jeu entier en Kotlin. Ce jeu se repose sur la librairie JavaFX pour la gestion des graphiques, et propose plusieurs fonctionnalités. Le jeu peut être joué en multijoueurs, ou contre une IA. Une partie peut être sauvegardée, et plusieurs pages de navigation sont disponibles.",
+		"enDescription": "This game is a group work, made at the IUT. In a group of 4, we developed the design, and coded an entire game in Kotlin. This game use the JavaFX library for graphics management, and offers several features. The game can be played in multiplayer, or against an AI. A game can be saved, and several navigation pages are available.",
+		"listPrograms": ["kotlin"]
+	},
+	{
+		"projectId": "generatorParticle",
+		"projectSrc": null,
+		"srcIllustration": "presGenerator.jpg",
+		"projectVideo": "https://www.youtube.com/embed/gsbYgQiKNjc",
+		"frTitle": "Générateur de particules",
+		"enTitle": "Particles generator",
+		"frSubTitle": "Un projet golang réalisé avec la bibliothèque Ebiten ",
+		"enSubTitle": "A golang project made with the help of the the Ebiten library",
+		"frDescription": "Le but de ce projet était de créer un générateur de particules en GO, permettant d'obtenir des formes et couleurs complexes suivant des règles de génération précise. Ce générateur de particules 2D est donc configurable par un fichier JSON qui permet d'obtenir différents patterns, tels que des flammes, des explosions etc... Celui ci peut également gérer les collisions et des particules en générant d'autres...",
+		"enDescription": "The goal of this project was to create a particle generator in GO, to obtain complex shapes and colors according to precise generation rules. This 2D particle generator is therefore configurable by a JSON file which makes it possible to obtain different patterns, such as flames, explosions... This one can also manage collisions and particles that generates others...",
+		"listPrograms": ["golang"]
+	},
+	{
+		"projectId": "portfolioPierre",
+		"projectSrc": "https://pierre-genaudeau.antoineoteg.repl.co",
+		"projectVideo": null,
+		"srcIllustration": "presPierreWebSite.jpg",
+		"frTitle": "Portfolio pour un compositeur",
+		"enTitle": "Portfolio for a composer",
+		"frSubTitle": "Une commande d'un compositeur pour mettre en valeur son travail.",
+		"enSubTitle": "An order from a composer to highlight his work.",
+		"frDescription": "Le site vise à promouvoir les musiques de Pierre Genaudeau, et creer un \"hub\" de ses réseaux sociaux... Il a été realisé en équipe de 4, avec une attention particulière à l'ergonomie",
+		"enDescription": "The site aims to promote the musics of Pierre Genaudeau, and create a \"hub\" of his social networks... It was produced in a team of 4, with particular attention to ergonomics",
+		"listPrograms": ["html5", "css3", "javaScript"]
+	},
+	{
+		"projectId": "boxerGame",
+		"projectSrc": "https://replit.com/@antoineoteg/the-Boxer-Game",
+		"srcIllustration": "presBoxeurGame.jpg",
+		"projectVideo": "https://www.youtube.com/embed/q2_Lo3BzxWc",
+		"frTitle": "Jeu du Boxeur",
+		"enTitle": "Boxer Game",
+		"frSubTitle": "Un jeu réalisé en Python avec l'aide du module Pygame! ",
+		"enSubTitle": "A game made in Python with the help of the Pygame module! ",
+		"frDescription": "Ce jeu codé en python, grâce à la librairie de rendus 2D Pygame, met en scène un personnage dans l'espace devant combattre des ennemis pour accéder au niveau suivant. Ainsi, il m'a permis de rencontrer plusieurs aspects de la programmation de jeux vidéo, tel que la gestion des collisions, les projectiles, les ennemis et leurs déplacements, etc... Le jeu est plutôt complet en fonctionnalités, et permet une expérience de jeu plaisante.",
+		"enDescription": "This game coded in python, thanks to the 2D rendering library Pygame, show a character in space having to fight enemies to access the next level. It allowed me to meet several aspects of video game programming, such as the management of collisions, projectiles, enemies and their movement... The game is pretty complete in functionality, and give a fun game experience.",
+		"listPrograms": ["python"]
+	},
+	{
+		"projectId": "cryptDecrypt",
+		"projectSrc": null,
+		"projectVideo": null,
+		"srcIllustration": "presCrypt.jpg",
+		"frTitle": "Chiffrement et déchiffrement",
+		"enTitle": "Encryption and decryption",
+		"frSubTitle": "Des outils mathématiques pour crypter et décrypter! ",
+		"enSubTitle": "Mathematical tools to encrypt and decrypt messages! ",
+		"frDescription": "Les algorithmes ont été conçue dans un cadre scolaire, avec les méthode de chiffrement RSA pour crypter, de correction du bruit et d'analyse frequeciel pour le décryptage de message.",
+		"enDescription": "The algorithms were designed for school projects, with RSA encryption methods for encoding, noise correction and frequency analysis for decryption of message.",
+		"listPrograms": ["python"]
+	}
+]
