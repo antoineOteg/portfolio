@@ -52,7 +52,6 @@ function lunchCode(id) {
 function loadJauge() {
 	Array.from(document.querySelectorAll(".programsIcons .jauge")).forEach(node => {
 		node.style.animation = 'none'
-		node.offsetHeight
 		node.style.animation = null
 	})
 }
