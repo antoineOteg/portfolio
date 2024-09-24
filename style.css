@@ -877,7 +877,7 @@ section.projectPage>div>.projectSrc>.svgIcon{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1.5em;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #💻programs💻 .programsIcons>li{
